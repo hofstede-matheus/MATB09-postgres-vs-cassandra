@@ -9,9 +9,9 @@ services:
       - 'postgres_data:/var/lib/postgresql/data'
       - ./initdb.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
-      - POSTGRES_USER=MATB09
-      - POSTGRES_PASSWORD=MATB09
-      - POSTGRES_DB=sisfila
+      - POSTGRES_USER=matb09
+      - POSTGRES_PASSWORD=matb09
+      - POSTGRES_DB=matb09_db
 
   cassandra:
     image: 'cassandra:4.1'
