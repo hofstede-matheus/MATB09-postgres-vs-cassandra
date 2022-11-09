@@ -6,7 +6,6 @@ services:
     ports:
       - '5432:5432'
     volumes:
-      - 'postgres_data:/var/lib/postgresql/data'
       - ./initdb.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       - POSTGRES_USER=matb09
@@ -21,10 +20,5 @@ services:
       - '7199:7199'
       - '9042:9042'
       - '9160:9160'
-    # volumes:
-      # - './cassandra.yaml:/etc/cassandra/cassandra.yaml'
-
-
-volumes:
-  postgres_data:
-    driver: local
+    volumes:
+      - './cassandra.yaml:/etc/cassandra/cassandra.yaml'

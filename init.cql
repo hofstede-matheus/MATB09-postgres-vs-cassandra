@@ -32,8 +32,15 @@ CREATE TABLE matb09.UsuariosPorColegiado (
   PRIMARY KEY (id_colegiado)
 );
 
-CREATE MATERIALIZED VIEW matb09.AlunosPorFilaPosicaoView AS
+CREATE TABLE matb09.Colegiados (
+  id_colegiado TEXT,
+  codigo_colegiado TEXT,
+  nome_colegiado TEXT,
+  PRIMARY KEY (id_colegiado)
+);
+
+CREATE MATERIALIZED VIEW matb09.AlunosSemFila AS
   SELECT * FROM matb09.AlunosPorFila
-  ORDER BY data_entrada_na_fila DESC
-  PRIMARY KEY (id_fila, matricula_aluno);
+  WHERE nome_fila = NULL AND matricula_aluno IS NOT NULL
+  PRIMARY KEY (matricula_aluno, nome_fila);
 
