@@ -22,3 +22,6 @@ services:
       - '9160:9160'
     volumes:
       - './cassandra.yaml:/etc/cassandra/cassandra.yaml'
+      - './cassandra-logger-0.2.jar:/etc/cassandra/triggers/cassandra-logger-0.2.jar'
+      # - './hms-cassandra-triggers-1.0.1.jar:/etc/cassandra/triggers/hms-cassandra-triggers-1.0.1.jar'
+
