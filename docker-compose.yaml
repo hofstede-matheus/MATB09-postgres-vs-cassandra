@@ -13,7 +13,7 @@ services:
       - POSTGRES_DB=matb09_db
 
   cassandra:
-    image: 'cassandra:4.1'
+    image: 'cassandra:3.0'
     ports:
       - '7000:7000'
       - '7001:7001'
@@ -21,7 +21,7 @@ services:
       - '9042:9042'
       - '9160:9160'
     volumes:
-      - './cassandra.yaml:/etc/cassandra/cassandra.yaml'
+      # - './cassandra.yaml:/etc/cassandra/cassandra.yaml'
       - './cassandra-logger-0.2.jar:/etc/cassandra/triggers/cassandra-logger-0.2.jar'
       # - './hms-cassandra-triggers-1.0.1.jar:/etc/cassandra/triggers/hms-cassandra-triggers-1.0.1.jar'
 

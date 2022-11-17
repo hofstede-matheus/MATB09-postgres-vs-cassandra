@@ -67,7 +67,7 @@ BEGIN BATCH
   INSERT INTO matb09.Colegiados (id_colegiado, codigo_colegiado, nome_colegiado) VALUES ('123', 'SI', 'SISTEMAS DE INFORMAÇÃO');
 APPLY BATCH;
 
-
-CREATE TRIGGER trigger_alunos_por_fila ON matb09.AlunosPorFila using 'org.apache.cassandra.triggers.AuditTrigger';
 CREATE TRIGGER trigger_alunos_por_fila ON matb09.AlunosPorFila using 'com.felipead.cassandra.logger.LogTrigger';
-CREATE TRIGGER trigger_alunos_por_fila ON matb09.AlunosPorFila using 'org.apache.cassandra.triggers.InvertedIndex';
+-- CREATE TRIGGER trigger_alunos_por_fila ON matb09.AlunosPorFila using 'org.apache.cassandra.triggers.AuditTrigger';
+
+DROP TRIGGER trigger_alunos_por_fila ON matb09.AlunosPorFila;
