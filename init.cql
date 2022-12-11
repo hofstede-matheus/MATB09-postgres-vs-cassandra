@@ -71,3 +71,8 @@ CREATE TRIGGER trigger_alunos_por_fila ON matb09.AlunosPorFila using 'com.felipe
 -- CREATE TRIGGER trigger_alunos_por_fila ON matb09.AlunosPorFila using 'org.apache.cassandra.triggers.AuditTrigger';
 
 DROP TRIGGER trigger_alunos_por_fila ON matb09.AlunosPorFila;
+
+-- nodetool help snapshot
+-- nodetool snapshot --tag matb09-snapshot matb09
+-- find -name snapshots
+-- nodetool listsnapshots
