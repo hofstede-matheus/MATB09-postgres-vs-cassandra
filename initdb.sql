@@ -76,4 +76,42 @@ create extension if not exists "uuid-ossp";
   FOREIGN KEY (telaoId) REFERENCES Telao (id)
   );
 
+-- Views
+
+-- CREATE VIEW AlunosSemFila AS
+--  SELECT * FROM aluno
+--  LEFT JOIN alunofila 
+--  ON aluno.matricula = alunofila.alunomatricula 
+--  WHERE alunofila.filaid IS NULL;
+
+-- CREATE VIEW FilaSemAluno AS
+--  SELECT * FROM fila
+--  LEFT JOIN alunofila 
+--  ON fila.id = alunofila.filaid
+--  WHERE alunofila.filaid IS NULL;
+
+-- CREATE VIEW AlunosSI AS
+--  SELECT * FROM aluno
+--  INNER JOIN colegiado ON aluno.idcolegiado = colegiado.codigo
+--  WHERE colegiado.codigo = 'SI';
+
+
+-- Indexes
+
+-- CREATE INDEX fila_name_idx
+-- ON Fila USING HASH
+-- (id)
+
+-- CREATE INDEX colegiado_nome_idx
+-- ON Colegiado USING HASH
+-- (nome)
+
+-- CREATE INDEX aluno_numero_telefone_idx
+-- ON aluno USING HASH
+-- (numero_telefone)
+
+
+
+
 -- Seeds
+
